@@ -62,33 +62,52 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Custom Space Theme Colors
+        space: {
+          navy: "#020B18",
+          green: "#008751",
+          greenLight: "#00C46F",
+          cyan: "#38EFFF",
+          gold: "#FFD166",
+          coral: "#FF6B6B",
+          purple: "#A78BFA",
+        },
+        // Space theme utilities
+        "space-navy": "#020B18",
+        "space-green": "#008751",
+        "space-green-light": "#00C46F",
+        "space-cyan": "#38EFFF",
+        "space-gold": "#FFD166",
+        "space-coral": "#FF6B6B",
+        "space-purple": "#A78BFA",
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      fontFamily: {
+        orbitron: ["Orbitron", "sans-serif"],
+        "dm-sans": ["DM Sans", "sans-serif"],
       },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+        "twinkle": {
+          "0%, 100%": { opacity: "0.3", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.2)" },
         },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+        "shoot": {
+          "0%": { transform: "translateY(0) rotate(0deg)" },
+          "100%": { transform: "translateY(-1000px) rotate(360deg)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "twinkle": "twinkle 2s ease-in-out infinite",
+        "shoot": "shoot 3s linear infinite",
+        "float": "float 3s ease-in-out infinite",
+        "pulse-slow": "pulse-slow 4s ease-in-out infinite",
       },
     },
   },
