@@ -1,6 +1,8 @@
 import React from "react";
 import { GlassCard } from "./GlassCard";
 import { Badge } from "./Badge";
+import { XPBar } from "./XPBar";
+import { cn } from "@/lib/utils";
 import {
   TrendingUp,
   Award,
@@ -10,6 +12,7 @@ import {
   Star,
   Trophy,
   BookOpen,
+  Rocket,
 } from "lucide-react";
 
 interface StatCardProps {
@@ -191,6 +194,3 @@ export function Achievements() {
     </GlassCard>
   );
 }
-
-import { cn } from "@/lib/utils";
-import { Rocket } from "lucide-react";
