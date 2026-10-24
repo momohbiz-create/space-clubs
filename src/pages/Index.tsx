@@ -1,13 +1,13 @@
 import React from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Starfield } from "@/components/Starfield";
-import { Navigation } from "@/components/Navigation";
 import { TopBar } from "@/components/Navigation";
-import { DashboardStats } from "@/components/DashboardStats";
-import { Achievements } from "@/components/DashboardStats";
-import { CourseGrid, CourseCard } from "@/components/CourseCard";
+import { DashboardStats, Achievements } from "@/components/DashboardStats";
+import { CourseGrid } from "@/components/CourseCard";
 import { AITutor } from "@/components/AITutor";
+import { GlassCard } from "@/components/GlassCard";
+import { Star, Zap, BookOpen, Rocket, MessageCircle } from "lucide-react";
 
 export default function Home() {
   const location = useLocation();

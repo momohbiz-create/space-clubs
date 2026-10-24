@@ -3,14 +3,13 @@ import { cn } from "@/lib/utils";
 import { GlassCard, GlassCardContent, GlassCardFooter } from "./GlassCard";
 import { XPBar } from "./XPBar";
 import { Badge } from "./Badge";
-import { Send, Mic, MessageSquare, XClose, Loader2, Zap } from "lucide-react";
+import { Send, Mic, X, Loader2, Zap } from "lucide-react";
 
 interface Message {
   id: string;
   role: "user" | "assistant";
   content: string;
   timestamp: string;
-  loading?: boolean;
 }
 
 interface AITutorProps {
@@ -49,14 +48,14 @@ export function AITutor({ userId, courseId }: AITutorProps) {
     e.preventDefault();
     if (!input.trim()) return;
 
-    const userMessage = {
-      id: Date.now().toString(),
-      role: "user",
-      content: input,
-      timestamp: new Date().toLocaleTimeString(),
-    };
+    const userMessage: Message = {
+          id: Date.now().toString(),
+          role: "user",
+          content: input,
+          timestamp: new Date().toLocaleTimeString(),
+        };
 
-    setMessages((prev) => [...prev, userMessage]);
+    setMessages((prev: Message[]) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
 
@@ -72,12 +71,12 @@ export function AITutor({ userId, courseId }: AITutorProps) {
     await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsVoice(false);
     setInput("What is the solar system?");
-    setMessages((prev) => [...prev, {
-      id: Date.now().toString(),
-      role: "user",
-      content: "What is the solar system?",
-      timestamp: new Date().toLocaleTimeString(),
-    }]);
+    setMessages((prev: Message[]) => [...prev, {
+          id: Date.now().toString(),
+          role: "user",
+          content: "What is the solar system?",
+          timestamp: new Date().toLocaleTimeString(),
+        }]);
   };
 
   return (
@@ -97,7 +96,7 @@ export function AITutor({ userId, courseId }: AITutorProps) {
             className="p-2 rounded-lg text-white/50 hover:text-white hover:bg-white/5 transition-all"
             aria-label="Clear conversation"
           >
-            <XClose className="w-4 h-4" />
+            <X className="w-4 h-4" />
           </button>
         </div>
 
@@ -126,18 +125,18 @@ export function AITutor({ userId, courseId }: AITutorProps) {
           ))}
 
           {/* Loading State */}
-          {isLoading && messages.length > 0 && messages[messages.length - 1].role === "assistant" && !messages[messages.length - 1].loading && (
+          {isLoading && messages.length > 0 && messages[messages.length - 1].role === "assistant" && (
             <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10">
               <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                 <div className="w-2 h-2 bg-white rounded-full animate-pulse-slow" />
               </div>
               <span className="text-white/60 text-sm font-dm-sans">
-                AI is thinking...
-              </span>
-            </div>
-          ))}
-
-          {/* Empty State */}
+                              AI is thinking...
+                            </span>
+                          </div>
+                        )}
+              
+                        {/* Empty State */}
           {messages.length === 0 && !isLoading && (
             <div className="flex-1 flex items-center justify-center py-12 text-white/40 font-dm-sans">
               <p className="text-center">
@@ -155,15 +154,14 @@ export function AITutor({ userId, courseId }: AITutorProps) {
           className="flex gap-3 w-full"
         >
           <textarea
-            ref={inputRef}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask AI Tutor about space science..."
-            className="input-space flex-1 resize-none py-3 px-4 rounded-xl text-white font-dm-sans focus:outline-none focus:border-space-green focus:ring-2 focus:ring-space-green/20 transition-all"
-            rows={1}
-            maxRows={5}
-            aria-label="Message AI Tutor"
-          />
+                      ref={inputRef}
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      placeholder="Ask AI Tutor about space science..."
+                      className="input-space flex-1 resize-none py-3 px-4 rounded-xl text-white font-dm-sans focus:outline-none focus:border-space-green focus:ring-2 focus:ring-space-green/20 transition-all"
+                      rows={1}
+                      aria-label="Message AI Tutor"
+                    />
           <button
             type="submit"
             disabled={isLoading || !input.trim()}
