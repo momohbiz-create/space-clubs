@@ -135,7 +135,7 @@ export function AITutor({ userId, courseId }: AITutorProps) {
                 AI is thinking...
               </span>
             </div>
-          ))}
+          )}
 
           {/* Empty State */}
           {messages.length === 0 && !isLoading && (
