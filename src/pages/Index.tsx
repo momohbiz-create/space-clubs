@@ -8,7 +8,6 @@ import { DashboardStats } from "@/components/DashboardStats";
 import { Achievements } from "@/components/DashboardStats";
 import { CourseGrid, CourseCard } from "@/components/CourseCard";
 import { AITutor } from "@/components/AITutor";
-import { GlassCard } from "@/components/GlassCard";
 
 export default function Home() {
   const location = useLocation();
