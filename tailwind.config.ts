@@ -62,7 +62,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom Space Theme Colors
+        // Custom Space Theme Colors - Space Clubs Nigeria
         space: {
           navy: "#020B18",
           green: "#008751",
@@ -71,6 +71,12 @@ export default {
           gold: "#FFD166",
           coral: "#FF6B6B",
           purple: "#A78BFA",
+          // AfroFuturist additions
+          rocketOrange: "#FF6B1A",
+          cosmicPurple: "#7B5CFA",
+          auroraTeal: "#00D9A5",
+          deepSpace: "#07090F",
+          deepSpaceAlt: "#141928",
         },
         // Space theme utilities
         "space-navy": "#020B18",
@@ -80,10 +86,16 @@ export default {
         "space-gold": "#FFD166",
         "space-coral": "#FF6B6B",
         "space-purple": "#A78BFA",
+        "space-rocket-orange": "#FF6B1A",
+        "space-cosmic-purple": "#7B5CFA",
+        "space-aurora-teal": "#00D9A5",
+        "space-deep-space": "#07090F",
+        "space-deep-space-alt": "#141928",
       },
       fontFamily: {
         orbitron: ["Orbitron", "sans-serif"],
         "dm-sans": ["DM Sans", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
       keyframes: {
         "twinkle": {
@@ -102,12 +114,22 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
         },
+        "glow-pulse": {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
+        },
+        "nebula": {
+          "0%, 100%": { transform: "scale(1) rotate(0deg)" },
+          "50%": { transform: "scale(1.1) rotate(5deg)" },
+        },
       },
       animation: {
         "twinkle": "twinkle 2s ease-in-out infinite",
         "shoot": "shoot 3s linear infinite",
         "float": "float 3s ease-in-out infinite",
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "nebula": "nebula 20s ease-in-out infinite",
       },
     },
   },
