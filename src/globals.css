@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
@@ -75,10 +75,6 @@
     @apply bg-space-green hover:bg-space-green-light text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-[0_0_30px_rgba(0,196,111,0.4)] active:scale-[0.98];
   }
 
-  .btn-rocket {
-    @apply bg-space-rocket-orange hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 hover:shadow-[0_0_30px_rgba(255,107,26,0.4)] active:scale-[0.98];
-  }
-
   .btn-secondary {
     @apply bg-space-purple/20 hover:bg-space-purple/30 text-space-cyan font-semibold px-6 py-3 rounded-xl border border-space-purple/30 transition-all duration-200;
   }
@@ -115,10 +111,6 @@
     @apply font-dm-sans text-white/50 leading-relaxed;
   }
 
-  .text-digital {
-    @apply font-mono text-white font-medium;
-  }
-
   .xp-bar {
     @apply h-2 bg-white/10 rounded-full overflow-hidden;
   }
@@ -146,18 +138,6 @@
   .badge-purple {
     @apply badge-space bg-space-purple/20 text-space-purple border border-space-purple/30;
   }
-
-  .badge-rocket-orange {
-    @apply badge-space bg-space-rocket-orange/20 text-space-rocket-orange border border-space-rocket-orange/30;
-  }
-
-  .badge-cosmic-purple {
-    @apply badge-space bg-space-cosmic-purple/20 text-space-cosmic-purple border border-space-cosmic-purple/30;
-  }
-
-  .badge-aurora-teal {
-    @apply badge-space bg-space-aurora-teal/20 text-space-aurora-teal border border-space-aurora-teal/30;
-  }
 }
 
 @layer utilities {
@@ -184,16 +164,8 @@
     @apply bg-gradient-to-r from-space-gold to-yellow-400 bg-clip-text text-transparent;
   }
 
-  .text-gradient-rocket {
-    @apply bg-gradient-to-r from-space-rocket-orange to-space-cosmic-purple bg-clip-text text-transparent;
-  }
-
   .border-gradient {
     @apply relative before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r before:from-space-green/50 before:to-space-cyan/50 before:-z-10;
-  }
-
-  .border-gradient-rocket {
-    @apply relative before:absolute before:inset-0 before:rounded-2xl before:bg-gradient-to-r before:from-space-rocket-orange/50 before:to-space-cosmic-purple/50 before:-z-10;
   }
 }
 
@@ -229,21 +201,6 @@
 .star-green {
   background: #00C46F;
   box-shadow: 0 0 6px #00C46F, 0 0 12px #00C46F;
-}
-
-.star-rocket-orange {
-  background: #FF6B1A;
-  box-shadow: 0 0 6px #FF6B1A, 0 0 12px #FF6B1A;
-}
-
-.star-cosmic-purple {
-  background: #7B5CFA;
-  box-shadow: 0 0 6px #7B5CFA, 0 0 12px #7B5CFA;
-}
-
-.star-aurora-teal {
-  background: #00D9A5;
-  box-shadow: 0 0 6px #00D9A5, 0 0 12px #00D9A5;
 }
 
 .shooting-star {
