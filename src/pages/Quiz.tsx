@@ -154,7 +154,6 @@ export default function Quiz() {
             </div>
           </div>
         </main>
-        </div>
       </div>
     );
   }
@@ -201,24 +200,39 @@ export default function Quiz() {
 
             {/* Options */}
             <div className="space-y-3">
-              {currentQ.options.map((option, index) => (
-                <GlassCard
-                  key={index}
-                  className={cn(
-                    "p-5 rounded-xl text-left",
-                    progress.answers[index] !== -1 && "bg-white/5",
-                    progress.answers[index] === index && "bg-space-green/10 border border-space-green/30",
-                    !progress.answers[index] && "hover:bg-white/5 transition-colors"
-                  )}
-                >
-                  <div className="flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer">
-                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${progress.answers[index] === index ? "bg-space-green text-white" : progress.answers[index] !== -1 && index !== progress.answers[index] ? "bg-space-coral/20 text-space-coral" : "bg-white/10 text-white/50"}`}>
-                      {progress.answers[index] === index ? <Check className="w-3 h-3 text-white" /> : progress.answers[index] !== -1 && index !== progress.answers[index] ? <X className="w-3 h-3 text-space-coral" : ""}</div>
+              {currentQ.options.map((option, index) => {
+                const isSelected = progress.answers[index] === index;
+                const isAnswered = progress.answers[index] !== -1;
+                const isWrong = isAnswered && !isSelected;
+                const icon = isSelected ? (
+                  <Check className="w-3 h-3 text-white" />
+                ) : isWrong ? (
+                  <X className="w-3 h-3 text-space-coral" />
+                ) : null;
+                const circleClass = isSelected
+                  ? "bg-space-green text-white"
+                  : isWrong
+                  ? "bg-space-coral/20 text-space-coral"
+                  : "bg-white/10 text-white/50";
+                return (
+                  <GlassCard
+                    key={index}
+                    className={cn(
+                      "p-5 rounded-xl text-left",
+                      isAnswered && "bg-white/5",
+                      isSelected && "bg-space-green/10 border border-space-green/30",
+                      !isAnswered && "hover:bg-white/5 transition-colors"
+                    )}
+                  >
+                    <div className="flex items-center gap-3 px-4 py-3 rounded-xl cursor-pointer">
+                      <div className={`w-6 h-6 rounded-full flex items-center justify-center ${circleClass}`}>
+                        {icon}
+                      </div>
                       <span className="font-orbitron font-medium text-white flex-1">{option}</span>
                     </div>
-                  </div>
-                </GlassCard>
-              ))}
+                  </GlassCard>
+                );
+              })}
             </div>
 
             {/* Action Buttons */}
