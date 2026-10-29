@@ -62,28 +62,25 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Custom Space Theme Colors
-        space: {
-          navy: "#020B18",
-          green: "#008751",
-          greenLight: "#00C46F",
-          cyan: "#38EFFF",
-          gold: "#FFD166",
-          coral: "#FF6B6B",
-          purple: "#A78BFA",
-        },
-        // Space theme utilities
-        "space-navy": "#020B18",
-        "space-green": "#008751",
-        "space-green-light": "#00C46F",
-        "space-cyan": "#38EFFF",
-        "space-gold": "#FFD166",
-        "space-coral": "#FF6B6B",
-        "space-purple": "#A78BFA",
+        // Space Clubs Nigeria - AfroFuturist Color Palette
+                space: {
+                  navy: "#07090F",
+                  deep: "#141928",
+                  orange: "#FF6B1A",
+                  purple: "#7B5CFA",
+                  teal: "#00D9A5",
+                  gold: "#FFD166",
+                  // Aliases for existing components
+                  green: "#00D9A5",
+                  "green-light": "#34D399",
+                  cyan: "#00D9A5",
+                  coral: "#FF6B1A",
+                },
       },
       fontFamily: {
-        orbitron: ["Orbitron", "sans-serif"],
-        "dm-sans": ["DM Sans", "sans-serif"],
+        space: ["Space Grotesk", "sans-serif"],
+        body: ["DM Sans", "sans-serif"],
+        mono: ["Orbitron", "monospace"],
       },
       keyframes: {
         "twinkle": {
@@ -102,12 +99,22 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.5" },
         },
+        "orbit": {
+          "0%": { transform: "rotate(0deg) translateX(40px) rotate(0deg)" },
+          "100%": { transform: "rotate(360deg) translateX(40px) rotate(-360deg)" },
+        },
+        "glow": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--primary) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--primary) / 0.6)" },
+        },
       },
       animation: {
         "twinkle": "twinkle 2s ease-in-out infinite",
         "shoot": "shoot 3s linear infinite",
         "float": "float 3s ease-in-out infinite",
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
+        "orbit": "orbit 8s linear infinite",
+        "glow": "glow 3s ease-in-out infinite alternate",
       },
     },
   },
